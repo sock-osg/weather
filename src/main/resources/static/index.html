@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="US">
+<head>
+  <title>Weather</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+  <p>Weather</p>
+  <p>
+    <label for="selCityId">Select a city</label>
+    <select id="selCityId">
+      <option value="2643743">London</option>
+      <option value="1819729">Hong Kong</option>
+    </select>
+
+    <button id="btnSearch" onclick="getWeather($('#selCityId'))">Get weather information</button>
+  </p>
+  <br />
+  <p>
+    <table>
+      <tbody>
+        <tr>
+          <td>Current date: </td>
+          <td id="currentDateResult"></td>
+        </tr>
+        <tr>
+          <td>City: </td>
+          <td id="cityNameResult"></td>
+        </tr>
+        <tr>
+          <td>Weather: </td>
+          <td id="weatherDescriptionResult"></td>
+        </tr>
+        <tr>
+          <td>Temperature F: </td>
+          <td id="tempFResult"></td>
+        </tr>
+        <tr>
+          <td>Temperature C: </td>
+          <td id="tempCResult"></td>
+        </tr>
+        <tr>
+          <td>Sunrise: </td>
+          <td id="sunriseResult"></td>
+        </tr>
+        <tr>
+          <td>Sunset: </td>
+          <td id="sunsetResult"></td>
+        </tr>
+      </tbody>
+    </table>
+  </p>
+<p id="errorMessage" style="color: RED; font-size: 1.5em;"></p>
+</body>
+<script>
+  function getWeather($selCityId) {
+    $.getJSON("weather/" + $selCityId.val(), function(data) {
+      $("#currentDateResult").html(data.date);
+      $("#cityNameResult").html(data.cityName);
+      $("#weatherDescriptionResult").html(data.description);
+      $("#tempFResult").html(data.temperatureFahrenheit);
+      $("#tempCResult").html(data.temperatureCelsius);
+      $("#sunriseResult").html(data.sunrise);
+      $("#sunsetResult").html(data.sunset);
+
+      $("#errorMessage").html("");
+    }).fail(function (jqxhr, textStatus, error) {
+      console.log(jqxhr);
+      console.log(textStatus);
+      console.log(error);
+
+      $("#errorMessage").html("Error getting server info, please try again later.");
+    });
+  }
+</script>
+</html>

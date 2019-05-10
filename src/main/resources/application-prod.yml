@@ -1,0 +1,2 @@
+openWeatherMap:
+  applicationId: ${OPEN_WEATHER_MAP_APPID}

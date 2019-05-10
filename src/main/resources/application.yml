@@ -1,0 +1,16 @@
+openWeatherMap:
+  applicationId: ${OPEN_WEATHER_MAP_APPID:29ac91619949b1e2f20c8a4f7b513194}
+
+app:
+  externalServices:
+    rest:
+      openWeatherMap:
+        baseUrl: http://api.openweathermap.org
+        getWeatherByIdPath: /data/2.5/weather
+
+project:
+  version: @project.version@
+  name: @project.name@
+  description: @project.description@
+  groupId: @project.groupId@
+  artifactId: @project.artifactId@
