@@ -18,7 +18,7 @@ import org.springframework.web.client.RestClientException;
 @Service
 public class WeatherService {
 
-  private WeatherDao openWeatherMapDao;
+  private final WeatherDao openWeatherMapDao;
 
   /**
    * Create a new instance of the class.
@@ -26,7 +26,7 @@ public class WeatherService {
    */
   @Autowired
   public WeatherService(
-      WeatherDao openWeatherMapDao
+      final WeatherDao openWeatherMapDao
   ) {
     super();
     this.openWeatherMapDao = openWeatherMapDao;

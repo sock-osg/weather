@@ -21,17 +21,15 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class OpenWeatherMapDao implements WeatherDao {
 
-  private static final String EMPTY_STRING = "";
+  private final String applicationId;
 
-  private String applicationId;
-
-  private String baseUrl;
-  private String getWeatherByIdPath;
+  private final String baseUrl;
+  private final String getWeatherByIdPath;
 
   private static final String QP_ID_CITY = "id";
   private static final String QP_APP_ID = "APPID";
 
-  private RestTemplate restTemplate;
+  private final RestTemplate restTemplate;
 
   /**
    * Create a new instance of the class.
