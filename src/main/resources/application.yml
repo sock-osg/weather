@@ -6,7 +6,7 @@ app:
     rest:
       openWeatherMap:
         baseUrl: http://api.openweathermap.org
-        getWeatherByIdPath: /data/2.5/weather
+        getWeatherByIdPath: /weather
 
 project:
   version: @project.version@
@@ -14,3 +14,9 @@ project:
   description: @project.description@
   groupId: @project.groupId@
   artifactId: @project.artifactId@
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream

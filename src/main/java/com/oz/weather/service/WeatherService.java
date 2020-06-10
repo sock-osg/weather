@@ -39,12 +39,12 @@ public class WeatherService {
    */
   public WeatherDto getWeatherByCityId(final Long cityId) {
     final WeatherResp weatherResp;
-    try {
+    //try {
       weatherResp = this.openWeatherMapDao.byCityId(cityId);
-    } catch (RestClientException restClientExc) {
-      final String errorMessage = String.format("Information for city %s was not found", cityId);
-      throw new CityNotFoundException(errorMessage, restClientExc);
-    }
+    //} catch (RestClientException restClientExc) {
+    //  final String errorMessage = String.format("Information for city %s was not found", cityId);
+    //  throw new CityNotFoundException(errorMessage, restClientExc);
+    //}
 
     return ResponseBuilder.toDto(weatherResp);
   }

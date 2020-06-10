@@ -44,9 +44,8 @@ public class WeatherController {
    * @param cityId    cityId.
    * @return Weather information.
    */
-  @GetMapping(value = "/{cityId}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-  @ApiOperation(value = "Retrieves weather information for specific city id.",
-      produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+  @GetMapping(value = "/{cityId}", produces = MediaType.APPLICATION_JSON_VALUE)
+  @ApiOperation(value = "Retrieves weather information for specific city id.", produces = MediaType.APPLICATION_JSON_VALUE)
   @ApiImplicitParams({
       @ApiImplicitParam(name = "cityId", value = "City ID", dataType = "int", paramType = "path", required = true,
           example = "1819729"),

@@ -1,5 +1,6 @@
 package com.oz.weather.dao;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.oz.weather.dao.dto.WeatherResp;
 import com.oz.weather.utils.PathsBuilder;
 
@@ -50,6 +51,7 @@ public class OpenWeatherMapDao implements WeatherDao {
     this.restTemplate = restTemplate;
   }
 
+  @HystrixCommand
   @Override
   public WeatherResp byCityId(@NotNull final Long cityId) {
     MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<>();
