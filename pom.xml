@@ -24,7 +24,7 @@
     <swagger.version>2.9.2</swagger.version>
     <maven.checkstyle.plugin.version>3.0.0</maven.checkstyle.plugin.version>
     <maven.sevntu.checkstyle.plugin.version>1.33.0</maven.sevntu.checkstyle.plugin.version>
-    <maven.sevntu-checkstyle-check.checkstyle.version>8.18</maven.sevntu-checkstyle-check.checkstyle.version>
+    <maven.sevntu-checkstyle-check.checkstyle.version>8.29</maven.sevntu-checkstyle-check.checkstyle.version>
   </properties>
 
   <dependencies>
