@@ -1,9 +1,16 @@
+Weather API
+===
+
 Run with
 
+```
 mvn spring-boot:run
+```
 
-Go to
+## API Documentation
 
 http://localhost:8080/swagger-ui.html
 
-for api documentation.
+## Hystrix
+ * Dashboard: http://localhost:8080/hystrix
+ * Hystrix Stream: http://localhost:8080/actuator/hystrix.stream

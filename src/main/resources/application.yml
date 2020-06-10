@@ -6,7 +6,7 @@ app:
     rest:
       openWeatherMap:
         baseUrl: http://api.openweathermap.org
-        getWeatherByIdPath: /weather
+        getWeatherByIdPath: /data/2.5/weather
 
 project:
   version: @project.version@
